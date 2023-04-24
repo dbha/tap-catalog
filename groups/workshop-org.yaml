@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: workshop-org
+  description: Explore Korea Workshop Organization
+spec:
+  type: organization
+  profile:
+    displayName: Explore Workshop Org
+    email: workshop-org@vmware.com
+  children: [workshop-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: workshop-location
+  description: Explore Korea Workshop Organization
+spec:
+  targets:
+    - ./cloud-team.yaml
+    - ./cloud-user.yaml
+
+
+

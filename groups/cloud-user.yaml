@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: devuser1
+spec:
+  profile:
+    displayName: Devops User
+    email: devuser1@vmware.com
+    picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
+  memberOf: [workshop-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: edevuser2
+spec:
+  profile:
+    displayName: Devops User
+    email: devuser2@vmware.com
+    picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
+  memberOf: [workshop-team]  
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: User
+# metadata:
+#   name: Devops User
+# spec:
+#   profile:
+#     displayName: Workshop User
+#     email: explore-workshop-s002@vmware.com
+#     picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
+#   memberOf: [workshop-team]

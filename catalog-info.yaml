@@ -7,7 +7,134 @@ metadata:
     'backstage.io/techdocs-ref': dir:.
 spec:
   targets:
+    - ./groups/workshop-org.yaml
+    - ./systems/tap-gui-system.yaml  
     - ./components/tap-gui.yaml
-    - ./groups/default-org.yaml
-    - ./systems/tap-gui-system.yaml
-    - ./domains/tap-gui-domain.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: age-api
+  description: The Age API for Tanzu Application Platform GUI
+  links:
+    - url: https://api.agify.io
+      title: API Definition
+      icon: docs
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: workshop-team
+  system: age-api
+  definition: |
+    openapi: 3.0.1
+    info:
+      title: AGE API
+      description: AGE API
+      version: '0.1'
+    servers:
+      - url: https://api.agify.io
+    paths:
+      /:
+        get:
+          description: Auto generated using Swagger Inspector
+          parameters:
+            - name: name
+              in: query
+              schema:
+                type: string
+          responses:
+            '200':
+              description: Auto generated using Swagger Inspector
+              content:
+                application/json; charset=utf-8:
+                  schema:
+                    type: string
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: gender-api
+  description: The Gender API for Tanzu Application Platform GUI
+  links:
+    - url: https://api.genderize.io
+      title: API Definition
+      icon: docs
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: workshop-team
+  system: gender-api
+  definition: |
+    openapi: 3.0.1
+    info:
+      title: Gender API
+      description: Gender API
+      version: '0.1'
+    servers:
+      - url: https://api.genderize.io
+    paths:
+      /:
+        get:
+          description: Auto generated using Swagger Inspector
+          parameters:
+            - name: name
+              in: query
+              schema:
+                type: string
+          responses:
+            '200':
+              description: Auto generated using Swagger Inspector
+              content:
+                application/json; charset=utf-8:
+                  schema:
+                    type: string
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: API
+# metadata:
+#   name: vehicle-api
+#   description: The Vehicle API for Tanzu Application Platform GUI
+#   links:
+#     - url: https://vehicle-api-workshop-s005.explore.dha-tkgdemo.net
+#       title: API Definition
+#       icon: docs
+# spec:
+#   type: openapi
+#   lifecycle: experimental
+#   owner: workshop-team
+#   system: workshop-team # Or specify system name of your choice
+#   definition: |
+#     openapi: 3.0.1
+#     info:
+#       title: vehicle-api
+#       description: Vehicle API
+#       version: '0.1'
+#     servers:
+#       - url: https://vehicle-api-workshop-s005.explore.dha-tkgdemo.net
+#     paths:
+#       /vehicles:
+#         get:
+#           description: Auto generated using Swagger Inspector
+#           responses:
+#             '200':
+#               description: Auto generated using Swagger Inspector
+#               content:
+#                 application/json; charset=utf-8:
+#                   schema:
+#                     type: array
+#         post:
+#           description: This is to create New Vehicle
+#           requestBody:
+#             description: Vehicle Name
+#             required: true
+#             content:
+#               application/json:
+#                 schema:
+#                   type: object
+#                   properties:
+#                     name:
+#                       type: string
+#                       example: Bicycle
+#           responses:
+#             '200':
+#               description: Successfully created New Vehicle

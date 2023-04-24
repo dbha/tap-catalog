@@ -1,15 +1,69 @@
+# apiVersion: backstage.io/v1alpha1
+# kind: Component
+# metadata:
+#   name: tap-gui-component
+#   description: Tanzu Application Platform GUI Component
+#   tags:
+#     - v1alpha1
+#   annotations:
+#     'backstage.io/kubernetes-label-selector': 'app=backstage'
+#     'backstage.io/techdocs-ref': dir:.
+# spec:
+#   type: service
+#   lifecycle: production
+#   owner: default-team
+#   system: tap-gui
+
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: tap-gui-component
-  description: Tanzu Application Platform GUI Component
+  name: spring-sensors
+  description: spring-sensors Application
   tags:
-    - v1alpha1
+    - java
+    - spring
+    - web
+    - tanzu
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app=backstage'
-    'backstage.io/techdocs-ref': dir:.
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-sensors'
 spec:
   type: service
-  lifecycle: production
-  owner: default-team
-  system: tap-gui
+  lifecycle: experimental
+  owner: workshop-team
+  system: spring-sensors
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tanzu-java-web-app
+  description: Tanzu Java Web Application
+  tags:
+    - java
+    - spring
+    - web
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=tanzu-java-web-app'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: workshop-team
+  system: tanzu-java-web-app
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: hello-nodejs
+  description: NodeJs Application
+  tags:
+    - java
+    - nodejs
+    - web
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-nodejs'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: workshop-team
+  system: hello-nodejs  
