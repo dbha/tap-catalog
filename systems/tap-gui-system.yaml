@@ -6,7 +6,7 @@ metadata:
   annotations:
     'backstage.io/techdocs-ref': dir:.
 spec:
-  owner: workshop-team
+  owner: devops-team
 ---
 apiVersion: backstage.io/v1alpha1
 kind: System
@@ -16,4 +16,14 @@ metadata:
   annotations:
     'backstage.io/techdocs-ref': dir:.
 spec:
-  owner: workshop-team
+  owner: cloud-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: hello-nodejs
+  description: Nodejs Appliation
+  annotations:
+    'backstage.io/techdocs-ref': dir:.  
+spec:
+  owner: cloud-team  

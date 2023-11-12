@@ -1,13 +1,55 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: workshop-team
-  description: Workload DevOps Team
+  name: cloud-team
+  description: Workload Cloud Team
 spec:
   type: team
   profile:
-    displayName: Workshop DevOps Team
-    email: workshop-team@vmware.com
+    displayName: Workshop Cloud Team
+    email: cloud-team@vmware.com
     picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff
-  parent: workshop-org
+  parent: cloud-org
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: devops-team
+  description: Workload Devops Team
+spec:
+  type: team
+  profile:
+    displayName: Workshop Devops Team
+    email: devops-team@vmware.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff
+  parent: devops-org
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: api-group
+  description: Workload API Group
+spec:
+  type: team
+  profile:
+    displayName: Workshop API Group
+    email: api-group@vmware.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff
+  parent: cloud-org
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: admin-group
+  description: Workload Admin Group
+spec:
+  type: team
+  profile:
+    displayName: Workshop API Group
+    email: admin-group@vmware.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff
+  parent: cloud-org
   children: []

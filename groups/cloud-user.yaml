@@ -4,21 +4,45 @@ metadata:
   name: devuser1
 spec:
   profile:
-    displayName: Devops User
-    email: devuser1@vmware.com
+    displayName: "Devops Team : devopsuser1"
+    email: devuser1@vmware.com   # 이 부분이 OIDC email과 match 되어야 함
     picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
-  memberOf: [workshop-team]
+  memberOf: [devops-team,api-group]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: edevuser2
+  name: clouduser1
 spec:
   profile:
-    displayName: Devops User
-    email: devuser2@vmware.com
+    displayName: "Cloud Team : clouduser1"
+    email: clouduser1@vmware.com
     picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
-  memberOf: [workshop-team]  
+  memberOf: [cloud-team,api-group]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: dha
+spec:
+  profile:
+    displayName: Admin User
+    email: dha@vmware.com
+    picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
+  memberOf: [admin-group]   # admin 일 경우 별도 member를 넣지 않아도 됨
+  # memberOf: [cloud-team,devops-team,api-group,admin-group]  
+  
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: User
+# metadata:
+#   name: guest
+# spec:
+#   profile:
+#     displayName: guest User
+#     email: guest@example.com
+#     picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
+#   memberOf: [cloud-team]    
 # ---
 # apiVersion: backstage.io/v1alpha1
 # kind: User
@@ -29,4 +53,4 @@ spec:
 #     displayName: Workshop User
 #     email: explore-workshop-s002@vmware.com
 #     picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
-#   memberOf: [workshop-team]
+#   memberOf: [devops-team]

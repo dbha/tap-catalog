@@ -24,12 +24,14 @@ metadata:
     - spring
     - web
     - tanzu
-  annotations:
+  annotations:    
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-sensors'
+    'backstage.tanzu.vmware.com/user.default.devuser1': 'catalog.entities.read'
 spec:
   type: service
   lifecycle: experimental
-  owner: workshop-team
+  # owner: cloud-team
+  owner: devops-team
   system: spring-sensors
 ---
 apiVersion: backstage.io/v1alpha1
@@ -44,10 +46,12 @@ metadata:
     - tanzu
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=tanzu-java-web-app'
+    # backstage.tanzu.vmware.com/<group|user>.<namespace>.<name>: 'COMMA-SEPARATED-PERMISSIONS'      
+    'backstage.tanzu.vmware.com/user.default.clouduser1': 'catalog.entities.read' 
 spec:
   type: service
   lifecycle: experimental
-  owner: workshop-team
+  owner: cloud-team
   system: tanzu-java-web-app
 ---
 apiVersion: backstage.io/v1alpha1
@@ -60,10 +64,30 @@ metadata:
     - nodejs
     - web
     - tanzu
-  annotations:
+  annotations:  
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-nodejs'
+    'backstage.tanzu.vmware.com/user.default.clouduser1': 'catalog.entities.read'   
 spec:
   type: service
   lifecycle: experimental
-  owner: workshop-team
-  system: hello-nodejs  
+  owner: cloud-team
+  system: hello-nodejs
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: jupyter-web-app
+  description: jupyter-web-app Application
+  tags:
+    - java
+    - spring
+    - web
+    - tanzu
+  annotations:    
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=jupyter-web-app'
+spec:
+  type: service
+  lifecycle: experimental
+  # owner: cloud-team
+  owner: devops-team
+  system: jupyter-web-app

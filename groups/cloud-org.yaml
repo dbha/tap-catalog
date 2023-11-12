@@ -1,0 +1,34 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: cloud-org
+  description: Cloud Workshop Organization
+spec:
+  type: organization
+  profile:
+    displayName: Cloud Org
+    email: cloud-org@vmware.com
+  children: [cloud-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: devops-org
+  description: Devops Workshop Organization
+spec:
+  type: organization
+  profile:
+    displayName: Devops Org
+    email: devops-org@vmware.com
+  children: [devops-team]
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Location
+# metadata:
+#   name: Cloud-location
+#   description: Workshop Organization
+# spec:
+#   targets:
+#     - ./cloud-team.yaml
+#     - ./cloud-user.yaml
+
